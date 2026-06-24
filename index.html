@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Para Mi Jenni 💖</title>
+
+<style>
+body{
+    margin:0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, pink, hotpink);
+    overflow-x:hidden;
+}
+
+/* LOGIN */
+#login{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+}
+
+#login input{
+    padding:10px;
+    border-radius:10px;
+    border:none;
+    margin:10px;
+}
+
+#login button{
+    padding:10px 20px;
+    border:none;
+    border-radius:10px;
+    background:#ff2d75;
+    color:white;
+    cursor:pointer;
+}
+
+/* CONTENIDO */
+#contenido{
+    display:none;
+    padding:20px;
+}
+
+.carta{
+    background:white;
+    padding:20px;
+    border-radius:20px;
+    max-width:800px;
+    margin:auto;
+    box-shadow:0 0 20px rgba(0,0,0,0.2);
+}
+
+/* corazones */
+.corazon{
+    position:fixed;
+    top:-10px;
+    color:red;
+    animation: caer 6s linear;
+}
+
+@keyframes caer{
+    to{
+        transform:translateY(110vh);
+        opacity:0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- LOGIN -->
+<div id="login">
+    <h1>🌹 Para mi Jenni guapa :3 🌹</h1>
+    <input id="clave" type="password" placeholder="Ingresa la contraseña">
+    <button onclick="entrar()">Entrar 💖</button>
+    <p>Contraseña: Jennilinda</p>
+</div>
+
+<!-- CONTENIDO -->
+<div id="contenido">
+
+<div class="carta">
+
+<h1>🌹 Para Mi Jenni 🌹</h1>
+
+<p>
+para Jenni que abandono a su pug :(
+</p>
+
+<p>
+gracias Jenni por todo lo siento si crees que fui poco por confundirte más, pero me cuesta mucho soltarte y ya sabes porque :(
+</p>
+
+<button onclick="mostrarSorpresa()">
+🎁 Ver sorpresa
+</button>
+
+<button onclick="reproducirMusica()">
+🎵 Audio para Jenni
+</button>
+
+<button onclick="reproducirMusica2()">
+🎶 Música para Jenni
+</button>
+
+<div id="sorpresa" style="display:none; margin-top:20px;">
+
+<h2>❤️ Nuestros momentos ❤️</h2>
+
+<img src="foto1.jpg" style="width:300px;border-radius:20px;margin:10px;box-shadow:0 0 15px rgba(0,0,0,.3);">
+<img src="foto2.jpg" style="width:300px;border-radius:20px;margin:10px;box-shadow:0 0 15px rgba(0,0,0,.3);">
+<img src="foto3.jpg" style="width:300px;border-radius:20px;margin:10px;box-shadow:0 0 15px rgba(0,0,0,.3);">
+<img src="foto4.jpg" style="width:300px;border-radius:20px;margin:10px;box-shadow:0 0 15px rgba(0,0,0,.3);">
+<img src="foto5.jpg" style="width:300px;border-radius:20px;margin:10px;box-shadow:0 0 15px rgba(0,0,0,.3);">
+
+<p style="font-size:25px;margin-top:20px;color:#ff2d75;">
+✨ Mira mi Jenni unas fotitos verdad que somos unos cracks :) te quiero mucho mi Jenni guapa no tenemos muchas fotos pero tu sabes que yo todo lo llevo en mis recuerdos absolutamente todo :3 , eres la mejor linda bella guapa churra sexy muak muak muak ❤️ ✨
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- AUDIOS -->
+<audio id="audio">
+    <source src="cancion.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="audio2">
+    <source src="cancion4.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+
+function entrar()
+{
+    let clave=document.getElementById("clave").value;
+
+    if(clave==="Jennilinda")
+    {
+        document.getElementById("login").style.display="none";
+        document.getElementById("contenido").style.display="block";
+    }
+    else
+    {
+        alert("Contraseña incorrecta ❤️");
+    }
+}
+
+function mostrarSorpresa()
+{
+    let tiempo=5;
+    const sorpresa=document.getElementById("sorpresa");
+
+    sorpresa.style.display="block";
+    sorpresa.innerHTML="<h1>"+tiempo+"</h1>";
+
+    let intervalo=setInterval(function(){
+        tiempo--;
+
+        if(tiempo>0){
+            sorpresa.innerHTML="<h1>"+tiempo+"</h1>";
+        } else {
+            clearInterval(intervalo);
+
+            sorpresa.innerHTML=`
+            <h2>❤️ Nuestros momentos ❤️</h2>
+
+            <img src="foto1.jpg" style="width:300px;border-radius:20px;margin:10px;box-shadow:0 0 15px rgba(0,0,0,.3);">
+            <img src="foto2.jpg" style="width:300px;border-radius:20px;margin:10px;box-shadow:0 0 15px rgba(0,0,0,.3);">
+            <img src="foto3.jpg" style="width:300px;border-radius:20px;margin:10px;box-shadow:0 0 15px rgba(0,0,0,.3);">
+            <img src="foto4.jpg" style="width:300px;border-radius:20px;margin:10px;box-shadow:0 0 15px rgba(0,0,0,.3);">
+            <img src="foto5.jpg" style="width:300px;border-radius:20px;margin:10px;box-shadow:0 0 15px rgba(0,0,0,.3);">
+
+            <p style="font-size:25px;margin-top:20px;color:#ff2d75;">
+            ✨ Mira mi Jenni unas fotitos verdad que somos unos cracks :) te quiero mucho mi Jenni guapa no tenemos muchas fotos pero tu sabes que yo todo lo llevo en mis recuerdos absolutamente todo :3, eres la mejor linda bella guapa churra sexy muak muak muak ❤️ ✨
+            </p>
+            `;
+        }
+    },1000);
+}
+
+function reproducirMusica(){
+    document.getElementById("audio").play();
+}
+
+function reproducirMusica2(){
+    document.getElementById("audio2").play();
+}
+
+function crearCorazon(){
+    let c=document.createElement("div");
+    c.className="corazon";
+    c.innerHTML="❤️";
+    c.style.left=Math.random()*100+"vw";
+    c.style.fontSize=(20+Math.random()*30)+"px";
+    document.body.appendChild(c);
+
+    setTimeout(()=>{c.remove();},8000);
+}
+
+setInterval(crearCorazon,250);
+
+</script>
+
+</body>
+</html>
